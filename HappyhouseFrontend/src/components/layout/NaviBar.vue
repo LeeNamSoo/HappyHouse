@@ -39,6 +39,12 @@
               아파트정보</router-link
             ></b-nav-item
           >
+          <b-nav-item href="#"
+            ><router-link :to="{ name: 'QnA' }" class="link"
+              ><b-icon icon="chat-square-dots" font-scale="1"></b-icon>
+              QnA</router-link
+            ></b-nav-item
+          >
         </b-navbar-nav>
 
         <b-navbar-nav class="ml-auto">

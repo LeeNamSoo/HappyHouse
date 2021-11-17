@@ -14,6 +14,14 @@ import BoardView from "@/components/board/BoardView.vue";
 import BoardUpdate from "@/components/board/BoardUpdate.vue";
 import BoardDelete from "@/components/board/BoardDelete.vue";
 
+import QnA from "@/views/QnA.vue";
+import QnAList from "@/components/qna/QnAList.vue";
+import QnAWrite from "@/components/qna/QnAWrite.vue";
+import QnAView from "@/components/qna/QnAView.vue";
+import QnAUpdate from "@/components/qna/QnAUpdate.vue";
+import QnADelete from "@/components/qna/QnADelete.vue";
+import QnAAnswer from "@/components/qna/QnAAnswer.vue";
+
 import House from "@/views/House.vue";
 
 Vue.use(VueRouter);
@@ -83,6 +91,44 @@ const routes = [
     path: "/house",
     name: "House",
     component: House,
+  },
+  {
+    path: "/question",
+    name: "QnA",
+    component: QnA,
+    redirect: "/question/list",
+    children: [
+      {
+        path: "list",
+        name: "QnAList",
+        component: QnAList,
+      },
+      {
+        path: "write",
+        name: "QnAWrite",
+        component: QnAWrite,
+      },
+      {
+        path: "detail/:questionno",
+        name: "QnAView",
+        component: QnAView,
+      },
+      {
+        path: "update/:questionno",
+        name: "QnAUpdate",
+        component: QnAUpdate,
+      },
+      {
+        path: "delete/:questionno",
+        name: "QnADelete",
+        component: QnADelete,
+      },
+      {
+        path: "answer/:questionno",
+        name: "QnAAnswer",
+        component: QnAAnswer,
+      },
+    ],
   },
 ];
 
